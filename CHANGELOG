@@ -1,2 +1,5 @@
+1.1.0
+- Support caching objects, values, arrays, etc.
+
 1.0.0
 - Approved by PRB.

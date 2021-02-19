@@ -11,7 +11,7 @@ final class Controller extends Package
 {
     protected $pkgHandle = 'advanced_cache';
     protected $appVersionRequired = '8.3.1';
-    protected $pkgVersion = '1.0.0';
+    protected $pkgVersion = '1.1.0';
     protected $pkgAutoloaderRegistries = [
         'src/AdvancedCache' => '\A3020\AdvancedCache',
     ];
@@ -23,7 +23,7 @@ final class Controller extends Package
 
     public function getPackageDescription()
     {
-        return t('Cache hard-coded blocks and areas in theme files.');
+        return t('Cache hard-coded blocks, (global) areas, strings, arrays, and serializable objects.');
     }
 
     public function on_start()

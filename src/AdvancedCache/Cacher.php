@@ -21,6 +21,25 @@ final class Cacher
     }
 
     /**
+     * Takes and stores data for later retrieval. This data can be any php data,
+     * including arrays and object, except resources and objects which are
+     * unable to be serialized.
+     *
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    public function cache($value)
+    {
+        return $this->manager->cache(
+            $this->settings,
+            function() use ($value) {
+                return $value;
+            }
+        );
+    }
+
+    /**
      * Cache and render the output of a block.
      *
      * @param \Concrete\Core\Entity\Block\BlockType\BlockType $bt

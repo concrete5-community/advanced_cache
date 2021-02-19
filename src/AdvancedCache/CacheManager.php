@@ -41,7 +41,7 @@ final class CacheManager
      * @param CacheSettings $settings
      * @param callable $closure
      *
-     * @return string
+     * @return string|mixed
      */
     public function cache(CacheSettings $settings, $closure)
     {
@@ -91,12 +91,12 @@ final class CacheManager
     /**
      * Store the output of something to the cache.
      *
-     * @param string $output
+     * @param string $value
      * @param CacheSettings $settings
      *
-     * @return string
+     * @return string|mixed
      */
-    private function store($output, CacheSettings $settings)
+    private function store($value, CacheSettings $settings)
     {
         // Get the current cache entry.
         $item = $this->cache->getItem($settings->getCacheHandle());
@@ -106,12 +106,12 @@ final class CacheManager
 
         // Make sure the cache entry automatically expires after x-seconds.
         $item->expiresAfter($settings->getExpiresIn());
-        $item->set($output);
+        $item->set($value);
 
         $this->cache->save($item);
         $this->configWriter->write($settings);
 
-        return $output;
+        return $value;
     }
 
     /**
