@@ -11,7 +11,7 @@ final class Controller extends Package
 {
     protected $pkgHandle = 'advanced_cache';
     protected $appVersionRequired = '8.3.1';
-    protected $pkgVersion = '1.1.0';
+    protected $pkgVersion = '1.1.1';
     protected $pkgAutoloaderRegistries = [
         'src/AdvancedCache' => '\A3020\AdvancedCache',
     ];

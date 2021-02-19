@@ -3,13 +3,13 @@
 namespace A3020\AdvancedCache\Listener;
 
 use A3020\AdvancedCache\EventHandlers\Page;
-use Concrete\Core\Logging\Logger;
 use Exception;
+use Psr\Log\LoggerInterface;
 
 class BasePageListener
 {
     /**
-     * @var Logger
+     * @var LoggerInterface
      */
     private $logger;
 
@@ -18,7 +18,7 @@ class BasePageListener
      */
     private $handler;
 
-    public function __construct(Logger $logger, Page $handler)
+    public function __construct(LoggerInterface $logger, Page $handler)
     {
         $this->logger = $logger;
         $this->handler = $handler;
