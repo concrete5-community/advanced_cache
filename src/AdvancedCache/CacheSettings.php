@@ -61,9 +61,6 @@ final class CacheSettings
      */
     public function setHandle($handle)
     {
-        // Make sure the handle stays short.
-        $handle = substr($handle, 0, 20);
-
         $this->handle = $handle;
 
         return $this;
